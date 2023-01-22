@@ -201,17 +201,19 @@ class Phockup():
 
         try:
             filename = [
-                f'{(date["date"].year):04d}',
-                f'{(date["date"].month):02d}',
+                # f'{(date["date"].year):04d}',
+                # f'{(date["date"].month):02d}',
                 f'{(date["date"].day):02d}',
-                '-',
+                '__',
                 f'{(date["date"].hour):02d}',
+                '-',
                 f'{(date["date"].minute):02d}',
+                '-',
                 f'{(date["date"].second):02d}',
             ]
 
-            if date['subseconds']:
-                filename.append(date['subseconds'])
+            # if date['subseconds']:
+            #     filename.append(date['subseconds'])
 
             return ''.join(filename) + os.path.splitext(original_filename)[1]
         # TODO: Double check if this is correct!
